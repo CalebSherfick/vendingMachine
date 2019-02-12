@@ -1,3 +1,7 @@
 export default class Snack {
-  //write code here
+  constructor(name, location, price) {
+    this.name = name
+    this.location = location
+    this.price = price
+  }
 }
