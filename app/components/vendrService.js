@@ -20,14 +20,28 @@ export default class VendrService {
     return _vm.balance
   }
 
+  get Snacks() {
+    return _vm.snacks
+  }
+
   addQuarter() {
     console.log(2)
     _vm.balance += .25
   }
-  withdrawQuarter() {
-    _vm.balance -= .25
-    if (_vm.balance < 0) {
-      _vm.balance -= 25
+
+  purchase(itemNum) {
+    console.log('what?')
+    let targetSnack = _vm.snacks[itemNum]
+    if (targetSnack.price <= _vm.balance) {
+      _vm.balance -= targetSnack.price
+      itemImg(itemNum)
     }
   }
+
+  itemImg(itemNum) {
+    return _vm.snacks[itemNum].img
+  }
+
+
+
 }
